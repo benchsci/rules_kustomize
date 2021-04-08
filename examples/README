@@ -1,0 +1,14 @@
+Build:
+
+    bazel test //...
+
+You should see tests passing and output files like:
+
+    $ find bazel-out/ -name '*.yaml'
+    bazel-out/k8-fastbuild/bin/proj-1/cluster-a/stage/stage.yaml
+    bazel-out/k8-fastbuild/bin/proj-1/cluster-a/tools/tools.yaml
+    bazel-out/k8-fastbuild/bin/proj-2/cluster-b/prod/prod-b.yaml
+    bazel-out/k8-fastbuild/bin/proj-3/cluster-c/prod/prod-c.yaml
+
+Note these build targets use "file_test" rules in order to also provide test
+coverage for kustomize() invocations that don't use the "golden" argument.

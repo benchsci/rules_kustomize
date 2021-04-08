@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checkout
+      uses: actions/checkout@v1
+
+    - name: deps-go
+      uses: actions/setup-go@v2
+
+    - name: deps
+      run: |
+        curl -LO "https://github.com/bazelbuild/bazelisk/releases/download/v1.7.5/bazelisk-linux-amd64"
+        mkdir -p "${GITHUB_WORKSPACE}/bin/"
+        mv bazelisk-linux-amd64 "${GITHUB_WORKSPACE}/bin/bazel"
+        chmod +x "${GITHUB_WORKSPACE}/bin/bazel"
+
+    - name: gen
+      run: |
+        set -eux
+
+        # Enforce documentation is up-to-date.
+        ${GITHUB_WORKSPACE}/bin/bazel build //docs && cat ${GITHUB_WORKSPACE}/bazel-bin/docs/defs.md > ${GITHUB_WORKSPACE}/docs/defs.md
+        git diff-index --name-status HEAD
+        git diff
+        git diff-index --quiet HEAD
+
+        # Enforce license headers are up-to-date.
+        go get github.com/google/addlicense
+        go run github.com/google/addlicense -check -c "BenchSci Analytics Inc." -l apache *.*
+
+    - name: examples
+      working-directory: examples
+      run: ${GITHUB_WORKSPACE}/bin/bazel test ...
+
+    - name: tests
+      working-directory: tests
+      run: ${GITHUB_WORKSPACE}/bin/bazel test ...

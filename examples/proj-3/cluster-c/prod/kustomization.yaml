@@ -1,0 +1,6 @@
+namespace: prod
+commonLabels:
+  cluster: c
+
+resources:
+- ../../../base/echoapp

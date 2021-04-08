@@ -1,0 +1,3 @@
+resources:
+- subdir/password.secret.yaml
+- the-map.configmap.yaml
