@@ -20,9 +20,9 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
     name = "com_benchsci_rules_kustomize",
-    sha256 = "7e385ca357b4711286a65c52ca7f6ae070360fa63b3be26b18db19932e5d8498",
-    strip_prefix="benchsci-rules_kustomize-2d94cf7ce259c640ab0635c2363c9f45df021eb3",
-    urls = ["https://github.com/benchsci/rules_kustomize/tarball/2d94cf7ce259c640ab0635c2363c9f45df021eb3"],
+    sha256 = "402b48489fdf3bb2ac52c64c2ce9d8031e4a8f105675dac4a6dfb5c23e1623e2",
+    strip_prefix = "rules_kustomize-6cec90b4c8ae8e9d7eccd3c3b4d7780effff03a8",
+    urls = ["https://github.com/benchsci/rules_kustomize/archive/6cec90b4c8ae8e9d7eccd3c3b4d7780effff03a8.zip"],
 )
 
 load("@com_benchsci_rules_kustomize//:workspace.bzl", "download_kustomize_deps")
