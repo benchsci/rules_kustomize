@@ -45,6 +45,9 @@ kubeconfig()
 
 Macro for genrule target named "kubeconfig" intended to uniquely identify a Kubernetes cluster.
 
+This macro creates two rules: "kubeconfig" and "kubectl".  The latter is a
+convenience run rule that invokes kubectl with the sibling configuration.
+
 These rules are meant to be set in the `cfg` parameter of the `apply` rule
 documented below.
 

@@ -4,6 +4,9 @@ on:
   push:
     branches:
     - main
+  pull_request:
+    branches:
+    - main
 
 jobs:
   build:
@@ -35,7 +38,7 @@ jobs:
 
         # Enforce license headers are up-to-date.
         go get github.com/google/addlicense
-        go run github.com/google/addlicense -check -c "BenchSci Analytics Inc." -l apache *.*
+        go run github.com/google/addlicense -check -c "BenchSci Analytics Inc." -l apache *.* tools
 
     - name: examples
       working-directory: examples
