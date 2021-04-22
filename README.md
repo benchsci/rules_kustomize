@@ -82,6 +82,6 @@ You can alias these tools into your own Bazel repository via
 example:
 
     alias(
-        name = "kubectl"
+        name = "kubectl",
         actual = "@com_benchsci_rules_kustomize//:kubectl",
     )

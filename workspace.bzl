@@ -58,11 +58,11 @@ def download_gcloud_deps():
             "ln -s google-cloud-sdk/bin/bq bq",
         ],
         sha256 = {
-            "darwin": "809a2bee632bd71db08a2e6916e0cd8eb83117cbcb4dce1296a83aeed38bfbc7",
-            "linux": "49a88d901df80b07fc863896e3427029a667c7084714d65849f731b0c4c84bae",
+            "darwin": "e6c0c8c7f360be118c9416e7d990d0c92c73a2894cb75219e73bd703b73812d1",
+            "linux": "04835064bd1b015ad1f6797f2df5f7d8c47522b3d47d7c283d0b8b46c970309d",
         },
         url = {
-            "darwin": "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-312.0.0-darwin-x86_64.tar.gz",
-            "linux": "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-312.0.0-linux-x86_64.tar.gz",
+            "darwin": "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-337.0.0-darwin-x86_64-bundled-python.tar.gz",
+            "linux": "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-337.0.0-linux-x86_64.tar.gz",
         },
     )
