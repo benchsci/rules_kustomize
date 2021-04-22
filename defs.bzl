@@ -15,6 +15,9 @@
 def kubeconfig():
     """Macro for genrule target named "kubeconfig" intended to uniquely identify a Kubernetes cluster.
 
+    This macro creates two rules: "kubeconfig" and "kubectl".  The latter is a
+    convenience run rule that invokes kubectl with the sibling configuration.
+
     These rules are meant to be set in the `cfg` parameter of the `apply` rule
     documented below.
     """
@@ -29,6 +32,20 @@ def kubeconfig():
         cmd = "cat '$(location :kubeconfig.yaml)' > $@",
         # This visibility is intended to prevent accidental usage outside this
         # package and subpackages.  DO NOT CHANGE.
+        visibility = [":__subpackages__"],
+    )
+
+    native.sh_binary(
+        name = "kubectl",
+        srcs = ["@com_benchsci_rules_kustomize//:exec"],
+        data = [
+            ":kubeconfig",
+            "@com_benchsci_rules_kustomize//:kubectl",
+        ],
+        args = [
+            "$(location @com_benchsci_rules_kustomize//:kubectl)",
+            "--kubeconfig=$(location :kubeconfig)",
+        ],
         visibility = [":__subpackages__"],
     )
 
