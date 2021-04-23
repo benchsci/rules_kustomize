@@ -13,4 +13,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-exec "$@"
+# See https://github.com/bazelbuild/bazel/issues/3325
+if [ -z "${BUILD_WORKING_DIRECTORY-}" ]; then
+  echo "error BUILD_WORKING_DIRECTORY not set"
+  exit 1
+fi
+
+cmd="$( pwd )/${1}"
+cd "${BUILD_WORKING_DIRECTORY}"
+shift
+
+exec "${cmd}" "$@"
