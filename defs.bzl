@@ -59,7 +59,7 @@ def _base_cmd(cfg, src, namespace, tags, subcmd, *extra_args):
     if namespace != None:
         args += ["--namespace=" + namespace]
 
-    args += extra_args
+    args += list(extra_args)
 
     return dict(
         srcs = ["@com_benchsci_rules_kustomize//:exec"],
