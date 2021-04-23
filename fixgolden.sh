@@ -17,6 +17,6 @@ set -euxo pipefail
 
 while(($#)); do
   SOURCE=$1 && shift
-  GOLDEN="${BUILD_WORKING_DIRECTORY}/$( dirname "${SOURCE}" )/$1" && shift
+  GOLDEN="${BUILD_WORKSPACE_DIRECTORY}/$( dirname "${SOURCE}" )/$1" && shift
   cat "$SOURCE" > "$GOLDEN"
 done
