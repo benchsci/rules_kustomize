@@ -40,10 +40,10 @@ def kubeconfig():
         srcs = ["@com_benchsci_rules_kustomize//:exec"],
         data = [
             ":kubeconfig",
-            "@com_benchsci_rules_kustomize//:kubectl",
+            "@com_benchsci_rules_kustomize//:kubectl_bin",
         ],
         args = [
-            "$(location @com_benchsci_rules_kustomize//:kubectl)",
+            "$(location @com_benchsci_rules_kustomize//:kubectl_bin)",
             "--kubeconfig=$(location :kubeconfig)",
         ],
         visibility = [":__subpackages__"],
@@ -51,7 +51,7 @@ def kubeconfig():
 
 def _base_cmd(cfg, src, namespace, tags, subcmd, *extra_args):
     args = [
-        "$(location @com_benchsci_rules_kustomize//:kubectl)",
+        "$(location @com_benchsci_rules_kustomize//:kubectl_bin)",
         "--kubeconfig=$(location {})".format(cfg),
         subcmd,
         "-f=$(location {})".format(src),
@@ -64,7 +64,7 @@ def _base_cmd(cfg, src, namespace, tags, subcmd, *extra_args):
     return dict(
         srcs = ["@com_benchsci_rules_kustomize//:exec"],
         data = [
-            "@com_benchsci_rules_kustomize//:kubectl",
+            "@com_benchsci_rules_kustomize//:kubectl_bin",
             cfg,
             src,
         ],
