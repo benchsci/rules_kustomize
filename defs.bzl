@@ -52,7 +52,7 @@ def kubeconfig():
 def _base_cmd(cfg, src, namespace, tags, subcmd, *extra_args):
     args = [
         "$(location @com_benchsci_rules_kustomize//:kubectl)",
-        "--kubeconfig=$(location {})".foramt(cfg),
+        "--kubeconfig=$(location {})".format(cfg),
         subcmd,
         "-f=$(location {})".format(src),
     ]
