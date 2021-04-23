@@ -18,11 +18,12 @@ After setup, see the [examples](./examples/) directory and the [API documentatio
 ```bzl
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
+
 http_archive(
     name = "com_benchsci_rules_kustomize",
-    sha256 = "20f068268e269c3edd93e58cdeb5baeb24c0dcbd883f9368f6c499636d0669c7",
-    strip_prefix = "rules_kustomize-a423118c604dd701af22ea057b6cc3ca8b7b7837",
-    urls = ["https://github.com/benchsci/rules_kustomize/archive/a423118c604dd701af22ea057b6cc3ca8b7b7837.zip"],
+    sha256 = "11d2e8fd9b7c0fd7a5611f1e28922bae9857b34f38f8c02f990a38697955678e",
+    strip_prefix = "rules_kustomize-e27643c79f86a1546faf9e4d6eef75d1e10a57bc",
+    urls = ["https://github.com/benchsci/rules_kustomize/archive/e27643c79f86a1546faf9e4d6eef75d1e10a57bc.zip"],
 )
 
 load("@com_benchsci_rules_kustomize//:workspace.bzl", "download_kustomize_deps")
