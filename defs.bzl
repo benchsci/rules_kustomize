@@ -102,7 +102,7 @@ def apply(name, src, cfg, namespace = None, tags = None):
     if "requires-network" not in tags:
         fail("Apply target tags must contain 'requires-network'.")
 
-    native.sh_binary(name = name, **_base_cmd(cfg, src, namespace, tags, "apply", "--server-dry-run"))
+    native.sh_binary(name = name, **_base_cmd(cfg, src, namespace, tags, "apply", "--dry-run=server"))
     native.sh_binary(name = name + ".run", **_base_cmd(cfg, src, namespace, tags, "apply"))
     native.sh_binary(name = name + ".diff", **_base_cmd(cfg, src, namespace, tags, "diff"))
 

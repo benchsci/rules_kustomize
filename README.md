@@ -41,6 +41,9 @@ dependencies.  If you need to lock to different versions you can specify them
 explictly in your WORKSPACE file by copying and modifying the contents of the
 helper functions in [workspace.bzl](./workspace.bzl), for example:
 
+NB: Commits after 2021/05 require kubectl v1.19 or later (due to
+`--dry-run=server` replacing `--server-dry-run`).
+
 ```bzl
 http_archive_by_os(
     name = "kustomize",
@@ -55,19 +58,19 @@ http_archive_by_os(
     },
 )
 
-http_file(
-    name = "kubectl_darwin",
-    executable = True,
-    sha256 = "4d43205b0fcfc3655e964ab8b84415355cdcf18fe0e700c326be96a68d4b474a",
-    urls = ["https://storage.googleapis.com/kubernetes-release/release/v1.17.14/bin/darwin/amd64/kubectl"],
-)
+    http_file(
+        name = "kubectl_darwin",
+        executable = True,
+        sha256 = "add0c291629809c03f09fd1fd1e29cc3ec19bef6c7e47766bfd2638b7d25d5cb",
+        urls = ["https://storage.googleapis.com/kubernetes-release/release/v1.19.11/bin/darwin/amd64/kubectl"],
+    )
+    http_file(
+        name = "kubectl_linux",
+        executable = True,
+        sha256 = "10b3bb2526b47f52be9f39cee6e42f8b30acc5b415e7bb7b446500bb41a6fd03",
+        urls = ["https://storage.googleapis.com/kubernetes-release/release/v1.19.11/bin/linux/amd64/kubectl"],
+    )
 
-http_file(
-    name = "kubectl_linux",
-    executable = True,
-    sha256 = "1fea666b5c8f733b400610e3e7413df488ac329b3a50fcf78af34778911ee5ff",
-    urls = ["https://storage.googleapis.com/kubernetes-release/release/v1.17.14/bin/linux/amd64/kubectl"],
-)
 ```
 
 # Additional tools:
