@@ -214,6 +214,8 @@ def kustomization(
             data = [":" + name, golden],
             args = [
                 "diff",
+                "-I",
+                "^#.*",
                 "$(location :{})".format(name),
                 "$(location {})".format(golden),
             ],
