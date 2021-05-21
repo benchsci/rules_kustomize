@@ -46,7 +46,7 @@ def kubeconfig():
             "$(location @com_benchsci_rules_kustomize//:kubectl_bin)",
             "--kubeconfig=$(location :kubeconfig)",
         ],
-        visibility = [":__subpackages__"],
+        visibility = ["//visibility:public"],
     )
 
 def _base_cmd(cfg, src, namespace, tags, subcmd, *extra_args):
