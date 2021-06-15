@@ -24,9 +24,9 @@ while(($#)); do
   # Force merge conflicts to prevent automatically merging golden files which
   # aren't guaranteed to be correct (and in practice are often corrupt).
   if [[ "$OSTYPE" == "darwin"* ]]; then
-    MD5=$( md5 -r "$GOLDEN" | awk '{print $1}' )
+    MD5=$( md5 -r "$SOURCE" | awk '{print $1}' )
   else
-    MD5=$( md5sum "$GOLDEN" | awk '{print $1}' )
+    MD5=$( md5sum "$SOURCE" | awk '{print $1}' )
   fi
   echo "# Original: ${MD5}" >> "$GOLDEN"
 
