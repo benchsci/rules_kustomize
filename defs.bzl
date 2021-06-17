@@ -173,7 +173,7 @@ def kustomization(
         # This can be dangerous, but Bazel forces us to be explicit in
         # defining dependencies and we use the "block-network" tag below to
         # disallow fetches.
-        "--load_restrictor=none",
+        "--load-restrictor=LoadRestrictionsNone",
     ]
     if plugin_dir:
         build_cmd = ["KUSTOMIZE_PLUGIN_HOME=$$( realpath {} )".format(plugin_dir)] + build_cmd + ["--enable_alpha_plugins"]
