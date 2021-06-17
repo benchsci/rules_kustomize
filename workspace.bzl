@@ -24,12 +24,12 @@ filegroup(
     srcs = ["kustomize"],
 ) """,
         sha256 = {
-            "darwin": "297289cc0699056be91050507fbbd3dbc3050ae20d64eb7965a3da3a8abaa87a",
-            "linux": "0aeca6a054183bd8e7c29307875c8162aba6d2d4e170d3e7751aa78660237126",
+            "darwin": "f1e54fdb659a68e5ec0a65aa52868bcc32b18fd3bc2b545db890ba261d3781c4",
+            "linux": "f028cd2b675d215572d54634311777aa475eb5612fb8a70d84b957c4a27a861e",
         },
         url = {
-            "darwin": "https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv3.6.1/kustomize_v3.6.1_darwin_amd64.tar.gz",
-            "linux": "https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv3.6.1/kustomize_v3.6.1_linux_amd64.tar.gz",
+            "darwin": "https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv4.1.3/kustomize_v4.1.3_darwin_amd64.tar.gz",
+            "linux": "https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv4.1.3/kustomize_v4.1.3_linux_amd64.tar.gz",
         },
     )
 
