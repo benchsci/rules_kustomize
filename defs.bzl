@@ -70,6 +70,8 @@ def _base_cmd(cfg, src, namespace, tags, subcmd, *extra_args):
         ],
         tags = tags,
         args = args,
+        # Required to allow aliasing run targets.
+        visibility = ["//visibility:public"],
     )
 
 def apply(name, src, cfg, namespace = None, tags = None):
