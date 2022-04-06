@@ -45,6 +45,12 @@ filegroup(
         sha256 = "10b3bb2526b47f52be9f39cee6e42f8b30acc5b415e7bb7b446500bb41a6fd03",
         urls = ["https://storage.googleapis.com/kubernetes-release/release/v1.19.11/bin/linux/amd64/kubectl"],
     )
+    http_file(
+        name = "kubectl_linux_arm64",
+        executable = True,
+        sha256 = "4eadbeabc8b8584d923d54648bd19eb869ac9b7150c8f41cd217c937f49c718b",
+        urls = ["https://storage.googleapis.com/kubernetes-release/release/v1.19.11/bin/linux/arm64/kubectl"],
+    )
 
 def download_gcloud_deps():
     http_archive_by_os(

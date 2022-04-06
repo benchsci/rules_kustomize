@@ -27,6 +27,7 @@ sh_binary(
     srcs = select({
         "@bazel_tools//src/conditions:linux_x86_64": ["@kubectl_linux//file"],
         "@bazel_tools//src/conditions:darwin": ["@kubectl_darwin//file"],
+        "@bazel_tools//src/conditions:linux_aarch64": ["@kubectl_linux_arm64//file"],
     }),
 )
 
