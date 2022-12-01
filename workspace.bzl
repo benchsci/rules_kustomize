@@ -24,12 +24,14 @@ filegroup(
     srcs = ["kustomize"],
 ) """,
         sha256 = {
-            "darwin": "f1e54fdb659a68e5ec0a65aa52868bcc32b18fd3bc2b545db890ba261d3781c4",
-            "linux": "f028cd2b675d215572d54634311777aa475eb5612fb8a70d84b957c4a27a861e",
+            "darwin": "6fd57e78ed0c06b5bdd82750c5dc6d0f992a7b926d114fe94be46d7a7e32b63a",
+            "linux": "701e3c4bfa14e4c520d481fdf7131f902531bfc002cb5062dcf31263a09c70c9",
+            "linux_arm64": "65665b39297cc73c13918f05bbe8450d17556f0acd16242a339271e14861df67",
         },
         url = {
-            "darwin": "https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv4.1.3/kustomize_v4.1.3_darwin_amd64.tar.gz",
-            "linux": "https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv4.1.3/kustomize_v4.1.3_linux_amd64.tar.gz",
+            "darwin": "https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv4.5.7/kustomize_v4.5.7_darwin_amd64.tar.gz",
+            "linux": "https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv4.5.7/kustomize_v4.5.7_linux_amd64.tar.gz",
+            "linux_arm64": "https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv4.5.7/kustomize_v4.5.7_linux_arm64.tar.gz",
         },
     )
 
