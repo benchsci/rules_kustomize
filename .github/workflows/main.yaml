@@ -17,7 +17,7 @@ jobs:
       uses: actions/checkout@v1
 
     - name: deps-go
-      uses: actions/setup-go@v2
+      uses: actions/setup-go@v3
 
     - name: deps
       run: |
@@ -37,8 +37,8 @@ jobs:
         git diff-index --quiet HEAD
 
         # Enforce license headers are up-to-date.
-        go get github.com/google/addlicense
-        go run github.com/google/addlicense -check -c "BenchSci Analytics Inc." -l apache *.* tools
+        GOBIN=/usr/local/bin/ go install github.com/google/addlicense@latest
+        addlicense -check -c "BenchSci Analytics Inc." -l apache *.* tools
 
     - name: examples
       working-directory: examples
