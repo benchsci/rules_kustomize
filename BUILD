@@ -25,9 +25,10 @@ sh_binary(
 sh_binary(
     name = "kubectl_bin",
     srcs = select({
-        "@bazel_tools//src/conditions:linux_x86_64": ["@kubectl_linux//file"],
-        "@bazel_tools//src/conditions:darwin": ["@kubectl_darwin//file"],
+        "@bazel_tools//src/conditions:darwin_arm64": ["@kubectl_darwin_arm64//file"],
+        "@bazel_tools//src/conditions:darwin_x86_64": ["@kubectl_darwin//file"],
         "@bazel_tools//src/conditions:linux_aarch64": ["@kubectl_linux_arm64//file"],
+        "@bazel_tools//src/conditions:linux_x86_64": ["@kubectl_linux//file"],
     }),
 )
 
