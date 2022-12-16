@@ -27,6 +27,15 @@ def os_name(repository_ctx):
     else:
         fail("Unsupported operating system: " + os_name)
 
+def cpu_name(repository_ctx):
+    cpu_name = repository_ctx.os.arch.lower()
+    if cpu_name.startswith("x86") or cpu_name.startswith("amd64") or cpu_name.startswith("k8"):
+        return ""
+    elif cpu_name.startswith("arm64") or cpu_name.startswith("aarch64"):
+        return "_arm64"
+    else:
+        fail("Unsupported cpu arch: " + cpu_name)
+
 _http_archive_by_os_attrs = {
     "url": attr.string_dict(),
     "urls": attr.string_list_dict(),
@@ -50,7 +59,7 @@ def _http_archive_by_os_impl(ctx):
     if ctx.attr.build_file and ctx.attr.build_file_content:
         fail("Only one of build_file and build_file_content can be provided.")
 
-    host = os_name(ctx)
+    host = "".join([os_name(ctx), cpu_name(ctx)])
     url = ctx.attr.url.get(host)
     urls = ctx.attr.urls.get(host)
     sha256 = ctx.attr.sha256.get(host) or ""
