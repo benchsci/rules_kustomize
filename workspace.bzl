@@ -46,7 +46,7 @@ filegroup(
     http_file(
         name = "kubectl_darwin_arm64",
         executable = True,
-        sha256 = "add0c291629809c03f09fd1fd1e29cc3ec19bef6c7e47766bfd2638b7d25d5cb",
+        sha256 = "2f1377adc7e9557bd1545607fb0e041e5e62d987bce9cba0b349070685340e32",
         urls = ["https://storage.googleapis.com/kubernetes-release/release/v1.23.14/bin/darwin/arm64/kubectl"],
     )
     http_file(
