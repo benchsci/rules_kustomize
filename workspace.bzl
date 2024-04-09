@@ -40,26 +40,26 @@ filegroup(
     http_file(
         name = "kubectl_darwin",
         executable = True,
-        sha256 = "51fb683d0d0c8968ba3f3c7cdccc281309efa17ba4f2303a45a28b4dd2038854",
-        urls = ["https://storage.googleapis.com/kubernetes-release/release/v1.23.14/bin/darwin/amd64/kubectl"],
+        sha256 = "bb04d9450d9c9fa120956c5cc7c8dfaa700297038ff9c941741e730b02bbd1f3",
+        urls = ["https://storage.googleapis.com/kubernetes-release/release/v1.29.2/bin/darwin/amd64/kubectl"],
     )
     http_file(
         name = "kubectl_darwin_arm64",
         executable = True,
-        sha256 = "2f1377adc7e9557bd1545607fb0e041e5e62d987bce9cba0b349070685340e32",
-        urls = ["https://storage.googleapis.com/kubernetes-release/release/v1.23.14/bin/darwin/arm64/kubectl"],
+        sha256 = "ce030f86625df96560402573d86d4e6f4b8b956ca3e3b9df57cb8ccf2b9a540c",
+        urls = ["https://storage.googleapis.com/kubernetes-release/release/v1.29.2/bin/darwin/arm64/kubectl"],
     )
     http_file(
         name = "kubectl_linux",
         executable = True,
-        sha256 = "13ce4b18ba6e15d5d259249c530637dd7fb9722d121df022099f3ed5f2bd74cd",
-        urls = ["https://storage.googleapis.com/kubernetes-release/release/v1.23.14/bin/linux/amd64/kubectl"],
+        sha256 = "7816d067740f47f949be826ac76943167b7b3a38c4f0c18b902fffa8779a5afa",
+        urls = ["https://storage.googleapis.com/kubernetes-release/release/v1.29.2/bin/linux/amd64/kubectl"],
     )
     http_file(
         name = "kubectl_linux_arm64",
         executable = True,
-        sha256 = "857716aa5cd24500349e5de8238060845af34b91ac4683bd279988ad3e1d3efa",
-        urls = ["https://storage.googleapis.com/kubernetes-release/release/v1.23.14/bin/linux/arm64/kubectl"],
+        sha256 = "3507ecb4224cf05ae2151a98d4932253624e7762159936d5347b19fe037655ca",
+        urls = ["https://storage.googleapis.com/kubernetes-release/release/v1.29.2/bin/linux/arm64/kubectl"],
     )
 
 def download_gcloud_deps():
